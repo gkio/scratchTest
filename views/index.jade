@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  if (!user)
+    a(href="/login") Login
+    br
+    a(href="/register") Register
+  if (user)
+   .main
+    .top
+      .logo
+      .menu
+        .basket
+        .cards-available cards available: 
+          span #{user.scratchCards}
+        .balance balance:
+          span #{user.balance}$
+        .notifications
+        .user
+          .user-img
+          .username #{user.username}
+          a(href="/logout") 
+           .arrow-down
+  
